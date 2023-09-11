@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Geometry-Genius</title>
+        <link rel="shortcut icon" href="images/triangle.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css"
+            rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+    </head>
+    <body class=" font-mono lg:container lg:mx-auto ">
+
+        <header
+            class=" bg-teal-200 p-10 flex flex-col justify-center items-center gap-5 lg:flex-row lg:justify-between">
+            <div>
+                <h1 class="text-2xl font-semibold">Interactive <br>
+                    <span class="text-xl text-gray-500">Geometry Genius</span></h1>
+            </div>
+            <div>
+                <button class="btn btn-primary px-10">Blog</button>
+            </div>
+        </header>
+
+        <main class="mt-10 flex flex-col-reverse justify-center  p-2 lg:flex-row  ">
+            <section class=" flex-1 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 ">
+                <!-- triangle card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10 h-48">
+                        <img
+                            src="/images/triangle.png"
+                            alt="triangle" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center space-y-2">
+                        <h2 class="card-title">Triangle!</h2>
+                        <p>Area (A) = 0.5 * b * h</p>
+
+                        <p>
+                            <input type="number" id="base-input" class="w-20 bg-slate-200 px-2 " placeholder="base">
+                            <span class="mr-2">cm</span>
+                            <input type="number" id="height-input" class="w-20  bg-slate-200 px-2 " placeholder="height">
+                            <span>cm</span>
+                        </p>
+
+                        <p>Area : <span id="triangle-area">0</span> cm<sup>2</sup></p>
+
+                        <button class="block w-full btn btn-primary" id="triangle-calculation">Calculate</button>
+                    </div>
+                </div>
+                <!-- triangle card end -->
+
+                <!-- rectangale card -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10 h-48">
+                        <img
+                            src="/images/rectangle.png"
+                            alt="triangle" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center space-y-2">
+                        <h2 class="card-title">Rectangale!</h2>
+                        <p>Area (A) = w * l</p>
+
+                        <p>
+                            <input type="number" id="width-input" class="w-20 bg-slate-200 px-2 " placeholder="width">
+                            <span class="mr-2">cm</span>
+                            <input type="number" id="length-input" class="w-20  bg-slate-200 px-2 " placeholder="length">
+                            <span>cm</span>
+                        </p>
+
+                        <p>Area : <span id="rectangale-area">0</span> cm<sup>2</sup></p>
+
+                        <button class="block w-full btn btn-primary" id="rectangale-calculation">Calculate</button>
+                    </div>
+                </div>
+                <!-- rectangle card end -->
+
+                <!-- pentagon card -->
+                <div class="card  bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10 h-48">
+                        <img
+                            src="/images/pentagon.png"
+                            alt="triangle" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center space-y-2">
+                        <h2 class="card-title">Pentagon!</h2>
+                        <p>Area (A) =0.5 * p * b</p>
+
+                        <p>
+                            <input type="number" id="p-input" class="w-20 bg-slate-200 px-2 " placeholder="p">
+                            <span class="mr-2">cm</span>
+                            <input type="number" id="b-input" class="w-20  bg-slate-200 px-2 " placeholder="b">
+                            <span>cm</span>
+                        </p>
+
+                        <p>Area : <span id="pentagon-area">0</span> cm<sup>2</sup></p>
+
+                        <button class="block w-full btn btn-primary" id="pentagon-calculation">Calculate</button>
+                    </div>
+                </div>
+                <!-- pentagon card end -->
+
+                <!-- Ellipse card -->
+                <div class="card  bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10 h-48">
+                        <img
+                            src="/images/ellipse.png"
+                            alt="ellipse" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center space-y-2">
+                        <h2 class="card-title">Ellipse!</h2>
+                        <p>Area (A) = π * a * b</p>
+
+                        <p>
+                            <input type="number" id="a-input" class="w-20 bg-slate-200 px-2 " placeholder="a">
+                            <span class="mr-2">cm</span>
+                            <input type="number" id="e-input" class="w-20  bg-slate-200 px-2 " placeholder="b">
+                            <span>cm</span>
+                        </p>
+
+                        <p>Area : <span id="ellipse-area">0</span> cm<sup>2</sup></p>
+
+                        <button class="block w-full btn btn-primary" id="ellipse-calculation">Calculate</button>
+                    </div>
+                </div>
+                <!-- ellipse card end -->
+
+                <!-- rhombus card -->
+                <div class="card  bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10 h-48">
+                        <img
+                            src="/images/rhombus.png"
+                            alt="rhombus" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center space-y-2">
+                        <h2 class="card-title">Rhombus!</h2>
+                        <p>Area (A) = 0.5 * d<sub>1</sub> * d<sub>2</sub></p>
+
+                        <p>
+                            <input type="number" id="d1-input" class="w-20 bg-slate-200 px-2 " placeholder="d1">
+                            <span class="mr-2">cm</span>
+                            <input type="number" id="d2-input" class="w-20  bg-slate-200 px-2 " placeholder="d2">
+                            <span>cm</span>
+                        </p>
+
+                        <p>Area : <span id="rhombus-area">0</span> cm<sup>2</sup></p>
+
+                        <button class="block w-full btn btn-primary" id="rhombus-calculation">Calculate</button>
+                    </div>
+                </div>
+                <!-- rhombus card end -->
+            </section>
+
+            <section class="w-[300px]">
+                <h2 class="text-center text-4xl">History</h2>
+                <hr width="50%" class="mx-auto">
+
+                <div id="history-entry">
+
+                </div>
+            </section>
+        </main>
+
+        <script src="js/utilities.js"></script>
+        <script src="js/geometry-cal.js"></script>
+
+    </body>
+</html>
